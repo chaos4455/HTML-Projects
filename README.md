@@ -49,8 +49,8 @@ Estou ativamente buscando investimentos reais para expandir esses projetos em so
 Atualmente, estou aberto a parcerias e colaborações para desenvolver sistemas e plataformas tanto para o mercado nacional quanto global. Se você está interessado em fazer parte dessa jornada, contribuir para o crescimento desses projetos e explorar oportunidades de negócios, ficarei feliz em discutir mais detalhes.
 
 **Elias Andrade**
-- [LinkedIn](https://www.linkedin.com/in/itilmgf)
-[<img align="left" alt="LinkedIn" src="https://raw.githubusercontent.com/chaos4455/HTML-Projects/main/img/linkedin.png" height="30px" />](https://www.linkedin.com/in/itilmgf)
+
+[<img align="left" alt="LinkedIn" src="https://raw.githubusercontent.com/chaos4455/HTML-Projects/main/img/linkedin.png" height="40px" />](https://www.linkedin.com/in/itilmgf)
 
 ## 📧 Contato
 
