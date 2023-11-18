@@ -1,54 +1,50 @@
-# 🚀 Portfólio de Projetos HTML - CARDAPIO-INTERATIVO
+# 🚀 Meu Repositório de Projetos HTML
 
-Bem-vindo ao meu Portfólio de Projetos HTML, uma demonstração sólida de conceitos inovadores no desenvolvimento de interfaces interativas para o setor alimentício.
+Bem-vindo ao meu repositório de projetos HTML, uma coleção diversificada de soluções criativas e inovadoras. Este é o início de uma jornada empolgante, e mais projetos serão adicionados em breve.
 
 ## 🌐 Visão Geral
 
-Este repositório contém uma série de projetos representando soluções inovadoras para menus interativos de lanchonetes, restaurantes e hamburguerias. Cada projeto é uma prova de conceito robusta, desenvolvida para criar experiências digitais excepcionais e otimizar operações no setor.
+Este repositório contém uma série de projetos que exploram conceitos inovadores em desenvolvimento web com HTML. Cada projeto é uma demonstração prática de habilidades técnicas e criativas.
 
-## 📁 Estrutura do Projeto
+## 📁 Lista de Projetos
 
 1. **Menu Interativo**
-   - [🍔 Menu Interativo](/CARDAPIO-INTERATIVO/menu.html)
-  
+   - [🍔 Menu Interativo](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/menu.html)
+
 2. **Menu Ajustado**
-   - [🔄 Menu Ajustado](/CARDAPIO-INTERATIVO/menuajustado.html)
+   - [🔄 Menu Ajustado](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/menuajustado.html)
 
 3. **Botão Pedido**
-   - [🛒 Botão Pedido](/CARDAPIO-INTERATIVO/BOTAOPEDIDO.html)
+   - [🛒 Botão Pedido](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/BOTAOPEDIDO.html)
 
 4. **Elemento**
-   - [🎨 Elemento](/CARDAPIO-INTERATIVO/ELEMENT.html)
+   - [🎨 Elemento](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/ELEMENT.html)
 
 5. **Frames**
-   - [🖼️ Frames](/CARDAPIO-INTERATIVO/FRAMES.html)
+   - [🖼️ Frames](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/FRAMES.html)
 
 6. **Menu Grande**
-   - [🍽️ Menu Grande](/CARDAPIO-INTERATIVO/MENU-GRANDE.html)
+   - [🍽️ Menu Grande](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/MENU-GRANDE.html)
 
 7. **Minimalista V1**
-   - [🌌 Minimalista V1](/CARDAPIO-INTERATIVO/MINIMALISTA-V1.html)
+   - [🌌 Minimalista V1](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/MINIMALISTA-V1.html)
 
 8. **MVP V1**
-   - [🚀 MVP V1](/CARDAPIO-INTERATIVO/MVPV1.html)
+   - [🚀 MVP V1](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/MVPV1.html)
 
 9. **PDV Menu**
-   - [💳 PDV Menu](/CARDAPIO-INTERATIVO/PDV-MENU.html)
+   - [💳 PDV Menu](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/PDV-MENU.html)
 
 10. **Projeto Tela PDV**
-   - [🖥️ Projeto Tela PDV](/CARDAPIO-INTERATIVO/PROJETOTELAPDV.html)
+    - [🖥️ Projeto Tela PDV](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/PROJETOTELAPDV.html)
 
-## 🎯 Objetivo
+## 🚀 Próximos Projetos
 
-Cada projeto aqui representa um passo significativo na transformação digital do setor alimentício. Estes são mais do que simples interfaces; são soluções estratégicas, visando:
-
-- **Melhoria da Experiência do Cliente:** Interfaces intuitivas e atraentes.
-- **Eficiência Operacional:** Otimização de processos e transações.
-- **Versatilidade:** Adaptação para diferentes dispositivos e plataformas.
+Fique atento para mais projetos emocionantes que serão adicionados a este repositório em breve!
 
 ## 🤝 Colaboração e Investimento
 
-Estou aberto a oportunidades de colaboração e investimento para levar essas soluções inovadoras para o mercado. Se você compartilha da visão de revolucionar a experiência digital no setor alimentício, vamos conversar.
+Estou aberto a oportunidades de colaboração e investimento para expandir ainda mais esta coleção de projetos. Se você tem interesse em fazer parte dessa jornada, entre em contato.
 
 **Elias Andrade**
 - [LinkedIn](https://www.linkedin.com/in/itilmgf)
