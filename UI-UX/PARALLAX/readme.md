@@ -13,7 +13,7 @@ Este projeto é um experimento envolvendo efeitos de parallax, zoom e blur utili
 
 - [Versão 1](https://chaos4455.github.io/HTML-Projects/UI-UX/PARALLAX/v1.html)
 - [Versão 2](https://chaos4455.github.io/HTML-Projects/UI-UX/PARALLAX/v2.html)
-- [Zoom Parallax Ajustar](https://chaos4455.github.io/HTML-Projects/UI-UX/PARALLAX/zoomparallaxajustar.html)
+- [Zoom Parallax Ajustar](https://chaos4455.github.io/HTML-Projects/UI-UX/PARALLAX/zoomparalaxajustar.html)
 
 Visualize o projeto em ação e veja as possibilidades de interação.
 
