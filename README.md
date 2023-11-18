@@ -8,6 +8,11 @@ Este repositório contém uma série de projetos que exploram conceitos inovador
 
 ## 📁 Lista de Projetos
 
+[**Conceitos e Telas - Projeto Tela MENU INTERATIVO - CARDAPIO INTERATIVO**](conceito-menu.md)
+
+[![Conceito Visual - Design Final](https://raw.githubusercontent.com/chaos4455/HTML-Projects/main/CARDAPIO-INTERATIVO/PROTOTIPAGEM%20INTERFACES/chrome_a9nMEsIfty.png)](conceito-menu.md)
+
+
 1. **Menu Interativo**
    - [🍔 Menu Interativo](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/menu.html)
 
@@ -38,6 +43,7 @@ Este repositório contém uma série de projetos que exploram conceitos inovador
 10. **Projeto Tela PDV**
     - [🖥️ Projeto Tela PDV](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/PROJETOTELAPDV.html)
 
+
 ## 🚀 Próximos Projetos
 
 Fique atento para mais projetos emocionantes que serão adicionados a este repositório em breve!
@@ -54,7 +60,7 @@ Atualmente, estou aberto a parcerias e colaborações para desenvolver sistemas 
 
 ## 📧 Contato
 
-Para mais informações, propostas ou esclarecimentos, entre em contato pelo e-mail: elias.andrade@email.com
+Para mais informações, propostas ou esclarecimentos, entre em contato pelo e-mail: elias.andrade@evolucaoit.com.br
 
 ---
 
