@@ -22,8 +22,8 @@ Visualize o projeto em ação e veja as possibilidades de interação.
 Aqui, compartilho estudos e conceitos relacionados a UI/UX para demonstrar minha compreensão aprofundada dos princípios de design.
 
 ### Imagens Conceituais
-1. ![Experimento 1](https://chaos4455.github.io/HTML-Projects/UI-UX/parallax/exp1.png)
-2. ![Experimento 2](https://chaos4455.github.io/HTML-Projects/UI-UX/parallax/exp2.png)
+1. ![Experimento 1]([https://chaos4455.github.io/HTML-Projects/UI-UX/parallax/exp1.png](https://github.com/chaos4455/HTML-Projects/blob/main/UI-UX/PARALLAX/exp2.png?raw=true))
+2. ![Experimento 2]([https://chaos4455.github.io/HTML-Projects/UI-UX/parallax/exp2.png](https://github.com/chaos4455/HTML-Projects/blob/main/UI-UX/PARALLAX/exp1.png?raw=true))
 
 (Aqui você pode adicionar links e descrições para outros estudos e conceitos que você incluirá no futuro.)
 
