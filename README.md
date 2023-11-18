@@ -50,7 +50,7 @@ Atualmente, estou aberto a parcerias e colaborações para desenvolver sistemas 
 
 **Elias Andrade**
 - [LinkedIn](https://www.linkedin.com/in/itilmgf)
-[<img align="left" alt="LinkedIn" src="https://chaos4455.github.io/HTML-Projects/img/linkedin.png" height="30px" />](https://www.linkedin.com/in/itilmgf)
+[<img align="left" alt="LinkedIn" src="https://chaos4455.github.io/HTML-Projects/img/linkedin.png](https://raw.githubusercontent.com/chaos4455/HTML-Projects/main/img/linkedin.png" height="30px" />](https://www.linkedin.com/in/itilmgf)
 
 ## 📧 Contato
 
