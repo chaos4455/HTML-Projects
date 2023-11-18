@@ -10,6 +10,9 @@ Este repositório contém uma série de projetos que exploram conceitos inovador
 
 [**Conceitos e Telas - Projeto Tela MENU INTERATIVO - CARDAPIO INTERATIVO**](conceito-menu.md)
 
+[![Conceito Visual - Design Final](https://raw.githubusercontent.com/chaos4455/HTML-Projects/main/CARDAPIO-INTERATIVO/PROTOTIPAGEM%20INTERFACES/chrome_a9nMEsIfty.png)](conceito-menu.md)
+
+
 1. **Menu Interativo**
    - [🍔 Menu Interativo](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/menu.html)
 
