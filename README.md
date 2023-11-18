@@ -37,6 +37,9 @@ Este repositório contém uma série de projetos que exploram conceitos inovador
 
 10. **Projeto Tela PDV**
     - [🖥️ Projeto Tela PDV](https://chaos4455.github.io/HTML-Projects/CARDAPIO-INTERATIVO/PROJETOTELAPDV.html)
+[**Conceitos e Telas - Projeto Tela PDV**](conceito-menu.md)
+
+
 
 ## 🚀 Próximos Projetos
 
