@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .parallax-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .parallax-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-image: url('bb.jpg'); /* Substitua com o caminho para o seu fundo */
+      background-size: cover;
+      background-position: center;
+      will-change: transform;
+      transition: transform 0.3s ease-out; /* Adiciona uma transição suave ao zoom */
+      opacity: 0;
+    }
+
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      width: 300px; /* Ajuste conforme necessário */
+      height: auto;
+      filter: blur(0);
+      transition: filter 0.3s ease-out, transform 0.3s ease-out; /* Adiciona transições suaves ao desfoque e tamanho da logo */
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax-container" id="parallaxContainer">
+    <div class="parallax-bg"></div>
+    <img src='burger.webp' alt="Logo" class="logo"> <!-- Substitua com o caminho para o seu logo -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const parallaxContainer = document.getElementById('parallaxContainer');
+      const parallaxBg = parallaxContainer.querySelector('.parallax-bg');
+      const logo = parallaxContainer.querySelector('.logo');
+
+      // Adiciona um fade-in branco para dar tempo ao fundo para carregar
+      document.body.style.backgroundColor = 'white';
+      setTimeout(() => {
+        document.body.style.transition = 'background-color 0.5s ease-out';
+        document.body.style.backgroundColor = 'transparent';
+      }, 500);
+
+      parallaxContainer.addEventListener('mousemove', function (e) {
+        const { clientX, clientY } = e;
+        const { offsetWidth, offsetHeight } = parallaxContainer;
+        const xPercentage = (clientX / offsetWidth - 0.5) * 100;
+        const yPercentage = (clientY / offsetHeight - 0.5) * 100;
+
+        // Calcula a distância do mouse ao logo
+        const distanceToLogo = Math.sqrt(xPercentage * xPercentage + yPercentage * yPercentage);
+
+        // Define limites mínimo e máximo para o zoom
+        const minZoom = 0.5;
+        const maxZoom = 2;
+
+        // Calcula o zoom da logo com base na distância do mouse ao logo
+        const zoomValue = Math.min(maxZoom, Math.max(minZoom, 1 - distanceToLogo / 100));
+        logo.style.transform = `translate(-50%, -50%) scale(${zoomValue})`;
+        logo.style.opacity = 1;
+
+        // Calcula o zoom do fundo com base na distância do mouse ao logo
+        const bgZoomValue = 1 + distanceToLogo / 100;
+        const bgSize = 100 * bgZoomValue;
+        parallaxBg.style.transform = `translate(-50%, -50%) scale(${bgZoomValue})`;
+        parallaxBg.style.backgroundSize = `${bgSize}% ${bgSize}%`;
+        parallaxBg.style.opacity = 1;
+      });
+
+      // Quando o mouse não está se movendo, retorna ao tamanho inicial
+      parallaxContainer.addEventListener('mouseout', function () {
+        logo.style.transform = 'translate(-50%, -50%) scale(1)';
+        logo.style.opacity = 1;
+
+        parallaxBg.style.transform = 'translate(-50%, -50%) scale(1)';
+        parallaxBg.style.backgroundSize = '100% 100%';
+        parallaxBg.style.opacity = 1;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .parallax-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .parallax-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-image: url('bb.jpg'); /* Substitua com o caminho para o seu fundo */
+      background-size: cover;
+      background-position: center;
+      will-change: transform;
+      transition: transform 0.3s ease-out; /* Adiciona uma transição suave ao zoom */
+      opacity: 0;
+    }
+
+    .burger-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .burger {
+      position: relative;
+      width: 200px; /* Ajuste conforme necessário */
+      height: auto;
+      filter: blur(0);
+      transition: filter 0.3s ease-out, transform 0.3s ease-out; /* Adiciona transições suaves ao desfoque e tamanho do hambúrguer */
+      margin: 0 20px; /* Adiciona margem para evitar que os hambúrgueres fiquem colados nas bordas laterais */
+    }
+
+    .burger:hover {
+      filter: blur(2px); /* Adiciona um leve efeito de desfoque ao passar o mouse */
+      transform: scale(2); /* Aumenta o tamanho ao passar o mouse */
+    }
+
+    .burger:not(:hover) {
+      transition: filter 0.3s ease-out, transform 0.3s ease-out; /* Adiciona transições suaves ao desfoque e tamanho do hambúrguer não focado */
+    }
+
+    .burger1:hover {
+      filter: blur(0); /* Remove o efeito de desfoque para o primeiro hambúrguer ao passar o mouse */
+    }
+
+    .burger2:hover {
+      filter: blur(0); /* Remove o efeito de desfoque para o segundo hambúrguer ao passar o mouse */
+    }
+
+    .burger3:hover {
+      filter: blur(0); /* Remove o efeito de desfoque para o terceiro hambúrguer ao passar o mouse */
+    }
+
+    .burger:hover ~ .burger:not(:hover) {
+      filter: blur(2px); /* Adiciona um leve efeito de desfoque aos hambúrgueres não focados quando um deles está sendo focado */
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .modal-buttons {
+      margin-top: 20px;
+    }
+
+    .modal-button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax-container" id="parallaxContainer">
+    <div class="parallax-bg"></div>
+    <div class="burger-container">
+      <img src='burger.webp' alt="Burger 1" class="burger burger1" onclick="openModal('Burger 1')">
+      <img src='burger.webp' alt="Burger 2" class="burger burger2" onclick="openModal('Burger 2')">
+      <img src='burger.webp' alt="Burger 3" class="burger burger3" onclick="openModal('Burger 3')">
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h2 id="burgerTitle"></h2>
+      <p>Descrição do hambúrguer aqui.</p>
+      <div class="modal-buttons">
+        <button class="modal-button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        <button class="modal-button" onclick="closeModal()">Voltar ao Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const parallaxContainer = document.getElementById('parallaxContainer');
+      const parallaxBg = parallaxContainer.querySelector('.parallax-bg');
+
+      // Adiciona um fade-in branco para dar tempo ao fundo para carregar
+      document.body.style.backgroundColor = 'white';
+      setTimeout(() => {
+        document.body.style.transition = 'background-color 0.5s ease-out';
+        document.body.style.backgroundColor = 'transparent';
+      }, 500);
+
+      parallaxContainer.addEventListener('mousemove', function (e) {
+        const { clientX, clientY } = e;
+        const { offsetWidth, offsetHeight } = parallaxContainer;
+        const xPercentage = (clientX / offsetWidth - 0.5) * 100;
+        const yPercentage = (clientY / offsetHeight - 0.5) * 100;
+
+        const burgers = document.querySelectorAll('.burger');
+        burgers.forEach((burger) => {
+          const rect = burger.getBoundingClientRect();
+          const burgerX = rect.left + rect.width / 2;
+          const burgerY = rect.top + rect.height / 2;
+          const distanceToBurger = Math.sqrt((clientX - burgerX) ** 2 + (clientY - burgerY) ** 2);
+
+          const isHovered = burger.contains(e.target) && distanceToBurger < 90;
+
+          if (isHovered) {
+            burger.classList.add('focused');
+          } else {
+            burger.classList.remove('focused');
+          }
+        });
+
+        // Calcula o zoom do fundo com base na distância do mouse
+        const distanceToBg = Math.sqrt(xPercentage * xPercentage + yPercentage * yPercentage);
+        const bgZoomValue = 1 + distanceToBg / 100;
+        const bgSize = 100 * bgZoomValue;
+        parallaxBg.style.transform = `translate(-50%, -50%) scale(${bgZoomValue})`;
+        parallaxBg.style.backgroundSize = `${bgSize}% ${bgSize}%`;
+        parallaxBg.style.opacity = 1;
+      });
+
+      // Quando o mouse não está se movendo, retorna ao tamanho inicial
+      parallaxContainer.addEventListener('mouseout', function () {
+        const burgers = document.querySelectorAll('.burger');
+        burgers.forEach((burger) => {
+          burger.classList.remove('focused');
+        });
+
+        parallaxBg.style.transform = 'translate(-50%, -50%) scale(1)';
+        parallaxBg.style.backgroundSize = '100% 100%';
+        parallaxBg.style.opacity = 1;
+      });
+    });
+
+    // Funções do Modal
+    function openModal(title) {
+      document.getElementById('burgerTitle').innerText = title;
+      document.getElementById('myModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('myModal').style.display = 'none';
+    }
+
+    function addToCart() {
+      alert('Hambúrguer adicionado ao carrinho!');
+      closeModal();
+    }
+  </script>
+</body>
+</html>
