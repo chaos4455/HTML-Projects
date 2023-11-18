@@ -54,7 +54,7 @@ Atualmente, estou aberto a parcerias e colaborações para desenvolver sistemas 
 
 ## 📧 Contato
 
-Para mais informações, propostas ou esclarecimentos, entre em contato pelo e-mail: elias.andrade@email.com
+Para mais informações, propostas ou esclarecimentos, entre em contato pelo e-mail: elias.andrade@evolucaoit.com.br
 
 ---
 
