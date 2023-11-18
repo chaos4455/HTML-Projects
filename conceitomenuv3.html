@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-ZqI5qZi5Jnaudfn2T6PDf7smN8dGP7ljItE+BmctLvfaQTMC5YDD3B/8xaFZNAJQQyHJqfBUs74Q8B+oeISZSw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .parallax-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .parallax-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-image: url('bb.jpg'); /* Substitua com o caminho para o seu fundo */
+      background-size: cover;
+      background-position: center;
+      will-change: transform;
+      transition: transform 0.3s ease-out; /* Adiciona uma transição suave ao zoom */
+      opacity: 0;
+    }
+
+    .burger-container {
+      position: absolute;
+      top: 50%;
+      left: 50%; /* Centraliza na tela */
+      transform: translate(-50%, -50%) scale(0.7); /* Reduz o zoom para 70% */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 70%; /* Define a largura para 70% da tela */
+      transition: margin-left 0.3s ease-out; /* Adiciona uma transição suave à mudança de margem */
+    }
+
+    .burger {
+      position: relative;
+      width: calc(33.33% - 20px); /* Divide a largura em 3 colunas */
+      margin: 10px;
+      height: auto;
+      filter: blur(0);
+      transition: filter 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    .burger:hover {
+      filter: blur(2px);
+      transform: scale(1.5);
+    }
+
+    .burger:not(:hover) {
+      transition: filter 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    .burger1:hover {
+      filter: blur(0);
+    }
+
+    .burger2:hover {
+      filter: blur(0);
+    }
+
+    .burger3:hover {
+      filter: blur(0);
+    }
+
+    .burger:hover ~ .burger:not(:hover) {
+      filter: blur(2px);
+    }
+
+    /* Botão Flutuante e Menu Lateral */
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-out;
+    }
+
+    .floating-button:hover {
+      background-color: #45a049;
+    }
+
+    .floating-button i {
+      font-size: 24px;
+    }
+
+    .menu-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 0;
+      background-color: #f1f1f1;
+      overflow-x: hidden;
+      transition: width 0.5s ease-out;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding-top: 20px;
+    }
+
+    .menu-content {
+      padding: 20px;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .modal-buttons {
+      margin-top: 20px;
+    }
+
+    .modal-button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax-container" id="parallaxContainer">
+    <div class="parallax-bg"></div>
+    <div class="burger-container">
+      <img src='burger.webp' alt="Burger 1" class="burger burger1" onclick="openModal('Burger 1')">
+      <img src='burger.webp' alt="Burger 2" class="burger burger2" onclick="openModal('Burger 2')">
+      <img src='burger.webp' alt="Burger 3" class="burger burger3" onclick="openModal('Burger 3')">
+      <img src='burger.webp' alt="Burger 4" class="burger burger4" onclick="openModal('Burger 4')">
+      <img src='burger.webp' alt="Burger 5" class="burger burger5" onclick="openModal('Burger 5')">
+      <img src='burger.webp' alt="Burger 6" class="burger burger6" onclick="openModal('Burger 6')">
+      <img src='burger.webp' alt="Burger 7" class="burger burger7" onclick="openModal('Burger 7')">
+      <img src='burger.webp' alt="Burger 8" class="burger burger8" onclick="openModal('Burger 8')">
+      <img src='burger.webp' alt="Burger 9" class="burger burger9" onclick="openModal('Burger 9')">
+    </div>
+  </div>
+
+  <!-- Botão Flutuante -->
+  <div class="floating-button" onclick="toggleMenu()">
+    <i class="fas fa-list"></i>
+  </div>
+
+  <!-- Menu Lateral -->
+  <div class="menu-container" id="menuContainer">
+    <div class="menu-content">
+      <p>Item 1</p>
+      <p>Item 2</p>
+      <p>Item 3</p>
+      <p>Item 4</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <h2 id="burgerTitle" class="burger-item-title"></h2>
+      <div class="burger-item-description">
+        <p>Descrição do hambúrguer.</p>
+        <p>Informações adicionais sobre o hambúrguer.</p>
+      </div>
+      <div class="modal-buttons">
+        <button class="modal-button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        <button class="modal-button" onclick="closeModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const parallaxContainer = document.getElementById('parallaxContainer');
+      const parallaxBg = parallaxContainer.querySelector('.parallax-bg');
+
+      // Adiciona um fade-in branco para dar tempo ao fundo para carregar
+      document.body.style.backgroundColor = 'white';
+      setTimeout(() => {
+        document.body.style.transition = 'background-color 0.5s ease-out';
+        document.body.style.backgroundColor = 'transparent';
+      }, 500);
+
+      parallaxContainer.addEventListener('mousemove', function (e) {
+        const { clientX, clientY } = e;
+        const { offsetWidth, offsetHeight } = parallaxContainer;
+        const xPercentage = (clientX / offsetWidth - 0.5) * 100;
+        const yPercentage = (clientY / offsetHeight - 0.5) * 100;
+
+        // Calcula a distância do mouse ao fundo
+        const distanceToBg = Math.sqrt(xPercentage * xPercentage + yPercentage * yPercentage);
+
+        // Define limites mínimo e máximo para o zoom
+        const minBgZoom = 1;
+        const maxBgZoom = 4;
+
+        // Calcula o zoom do fundo com base na distância do mouse ao fundo
+        const bgZoomValue = minBgZoom + distanceToBg / 100;
+        const bgSize = 100 * bgZoomValue;
+        parallaxBg.style.transform = `translate(-50%, -50%) scale(${bgZoomValue})`;
+        parallaxBg.style.backgroundSize = `${bgSize}% ${bgSize}%`;
+        parallaxBg.style.opacity = 1;
+      });
+
+      // Quando o mouse não está se movendo, retorna ao tamanho inicial
+      parallaxContainer.addEventListener('mouseout', function () {
+        const burgers = document.querySelectorAll('.burger');
+        burgers.forEach((burger) => {
+          burger.classList.remove('focused');
+        });
+
+        parallaxBg.style.transform = 'translate(-50%, -50%) scale(1)';
+        parallaxBg.style.backgroundSize = '100% 100%';
+        parallaxBg.style.opacity = 1;
+      });
+    });
+
+    // Funções do Modal
+    function openModal(title) {
+      document.getElementById('burgerTitle').innerText = title;
+      document.getElementById('myModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('myModal').style.display = 'none';
+    }
+
+    function addToCart() {
+      alert('Hambúrguer adicionado ao carrinho!');
+      closeModal();
+    }
+
+    // Funções do Menu Lateral
+    function toggleMenu() {
+      const menuContainer = document.getElementById('menuContainer');
+      const burgerContainer = document.querySelector('.burger-container');
+
+      if (menuContainer.style.width === '250px') {
+        menuContainer.style.width = '0';
+        burgerContainer.style.marginLeft = '0';
+      } else {
+        menuContainer.style.width = '250px';
+        burgerContainer.style.marginLeft = '250px';
+      }
+    }
+  </script>
+</body>
+</html>
