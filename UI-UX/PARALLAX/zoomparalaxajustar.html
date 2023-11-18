@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .parallax-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .parallax-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('b.png'); /* Substitua com o caminho para o seu fundo */
+      background-size: cover;
+      background-position: center;
+      will-change: transform;
+    }
+
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px; /* Ajuste conforme necessário */
+      height: auto;
+      filter: blur(0); /* Inicialmente, sem desfoque */
+      transition: filter 0.3s ease-out; /* Adiciona uma transição suave ao desfoque */
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax-container" id="parallaxContainer">
+    <div class="parallax-bg"></div>
+    <img src='a.webp' alt="Logo" class="logo"> <!-- Substitua com o caminho para o seu logo -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const parallaxContainer = document.getElementById('parallaxContainer');
+      const logo = parallaxContainer.querySelector('.logo');
+
+      parallaxContainer.addEventListener('mousemove', function (e) {
+        const { clientX, clientY } = e;
+        const { offsetWidth, offsetHeight } = parallaxContainer;
+        const xPercentage = (clientX / offsetWidth - 0.5) * 100;
+        const yPercentage = (clientY / offsetHeight - 0.5) * 100;
+
+        const parallaxBg = parallaxContainer.querySelector('.parallax-bg');
+        parallaxBg.style.transform = `translate(-${xPercentage}%, -${yPercentage}%)`;
+
+        // Calcula o desfoque com base no movimento do mouse
+        const blurValue = Math.sqrt(xPercentage * xPercentage + yPercentage * yPercentage);
+        // Aplica o desfoque à logo
+        logo.style.filter = `blur(${blurValue}px)`;
+      });
+
+      // Quando o mouse não está se movendo, remove o desfoque
+      parallaxContainer.addEventListener('mouseout', function () {
+        logo.style.filter = 'blur(0)';
+      });
+    });
+  </script>
+</body>
+</html>
